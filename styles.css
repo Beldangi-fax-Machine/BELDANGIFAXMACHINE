@@ -1,0 +1,560 @@
+/* ★★★ BELDANGI FAX MACHINE - 2009 STYLE CSS ★★★ */
+
+/* RESET & BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Comic Sans MS", "Trebuchet MS", Arial, sans-serif;
+    background: #000033;
+    background-image:
+        radial-gradient(circle at 20% 80%, #000066 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, #330066 0%, transparent 50%),
+        linear-gradient(180deg, #000022 0%, #000044 50%, #000022 100%);
+    color: #00ff00;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* STARS BACKGROUND */
+.stars-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(2px 2px at 20px 30px, white, transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+        radial-gradient(1px 1px at 90px 40px, white, transparent),
+        radial-gradient(2px 2px at 160px 120px, rgba(255,255,255,0.9), transparent),
+        radial-gradient(1px 1px at 230px 80px, white, transparent),
+        radial-gradient(2px 2px at 300px 150px, rgba(255,255,255,0.7), transparent),
+        radial-gradient(1px 1px at 350px 200px, white, transparent);
+    background-size: 400px 300px;
+    pointer-events: none;
+    z-index: -1;
+    animation: twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* MARQUEE STYLES */
+.top-marquee, .bottom-marquee {
+    background: linear-gradient(90deg, #ff0000, #ff6600, #ffff00, #00ff00, #0066ff, #9900ff, #ff0000);
+    background-size: 200% 100%;
+    animation: rainbow 3s linear infinite;
+    color: #000;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px;
+    text-shadow: 1px 1px 0 #fff;
+}
+
+@keyframes rainbow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+/* MAIN TABLE LAYOUT */
+.main-table {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: rgba(0, 0, 51, 0.9);
+    border: 3px ridge #00ff00;
+    box-shadow: 0 0 20px #00ff00, inset 0 0 20px rgba(0, 255, 0, 0.1);
+}
+
+/* HEADER */
+.header-cell {
+    background: linear-gradient(180deg, #000066 0%, #000033 50%, #000066 100%);
+    border-bottom: 3px ridge #00ff00;
+    padding: 20px;
+}
+
+.header-content {
+    text-align: center;
+}
+
+.construction-gif {
+    width: 80px;
+    height: 80px;
+    vertical-align: middle;
+    animation: bounce 0.5s infinite alternate;
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-5px); }
+}
+
+.main-title {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.glow {
+    font-size: 48px;
+    font-family: "Impact", "Arial Black", sans-serif;
+    color: #00ff00;
+    text-shadow:
+        0 0 5px #00ff00,
+        0 0 10px #00ff00,
+        0 0 20px #00ff00,
+        0 0 40px #00ff00,
+        2px 2px 0 #003300;
+    animation: glow-pulse 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow-pulse {
+    from { text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00; }
+    to { text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 80px #00ff00; }
+}
+
+.subtitle {
+    font-size: 24px;
+    color: #ffff00;
+    font-style: italic;
+    text-shadow: 2px 2px 0 #666600;
+    margin-top: 10px;
+}
+
+/* SIDEBARS */
+.sidebar {
+    width: 200px;
+    vertical-align: top;
+    padding: 10px;
+    background: linear-gradient(180deg, #001133 0%, #000022 100%);
+}
+
+.left-sidebar {
+    border-right: 2px ridge #00ff00;
+}
+
+.right-sidebar {
+    border-left: 2px ridge #00ff00;
+}
+
+.sidebar-box {
+    background: linear-gradient(180deg, #000066 0%, #000033 100%);
+    border: 2px ridge #00ccff;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 204, 255, 0.3);
+}
+
+.sidebar-box h3 {
+    color: #ffff00;
+    font-size: 14px;
+    text-align: center;
+    border-bottom: 1px dashed #00ff00;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 0 #333;
+}
+
+/* NAVIGATION */
+.nav-list {
+    list-style: none;
+}
+
+.nav-list li {
+    padding: 5px 0;
+}
+
+.nav-list a, .links-list a {
+    color: #00ccff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.nav-list a:hover, .links-list a:hover {
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff;
+}
+
+.links-list {
+    list-style: none;
+}
+
+.links-list li {
+    padding: 3px 0;
+}
+
+/* VISITOR COUNTER */
+.visitor-counter {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+    margin: 10px 0;
+}
+
+.counter-digit {
+    background: #000;
+    color: #ff0000;
+    font-family: "Courier New", monospace;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px 8px;
+    border: 2px inset #333;
+}
+
+/* SIDEBAR IMAGES */
+.sidebar-img {
+    width: 100%;
+    max-width: 150px;
+    display: block;
+    margin: 10px auto;
+    border: 3px ridge #ff6600;
+    box-shadow: 0 0 10px rgba(255, 102, 0, 0.5);
+}
+
+.img-caption {
+    text-align: center;
+    color: #ff6600;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+/* SKILLS */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+}
+
+.skill-tag {
+    background: linear-gradient(180deg, #006600 0%, #003300 100%);
+    color: #00ff00;
+    padding: 3px 8px;
+    font-size: 11px;
+    border: 1px solid #00ff00;
+    border-radius: 3px;
+}
+
+/* AWARDS */
+.awards {
+    text-align: center;
+}
+
+.award-badge {
+    background: linear-gradient(180deg, #ffcc00 0%, #ff9900 100%);
+    color: #000;
+    padding: 5px;
+    margin: 5px 0;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 3px;
+    border: 2px ridge #ffff00;
+}
+
+/* MAIN CONTENT */
+.main-content {
+    vertical-align: top;
+    padding: 20px;
+    background: linear-gradient(180deg, #000044 0%, #000022 50%, #000044 100%);
+}
+
+.content-box {
+    background: linear-gradient(180deg, #001144 0%, #000033 100%);
+    border: 3px ridge #00ff00;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+}
+
+.section-title {
+    color: #00ff00;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 0 #003300, 0 0 10px #00ff00;
+    border-bottom: 2px dashed #00ff00;
+    padding-bottom: 10px;
+}
+
+/* BLINK EFFECT */
+.blink {
+    animation: blink-animation 1s steps(2, start) infinite;
+}
+
+@keyframes blink-animation {
+    to { visibility: hidden; }
+}
+
+/* INFO TABLE */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+.info-table tr {
+    border-bottom: 1px dashed #006600;
+}
+
+.info-label {
+    color: #ffff00;
+    font-weight: bold;
+    padding: 8px;
+    width: 150px;
+    text-align: right;
+}
+
+.info-value {
+    color: #00ff00;
+    padding: 8px;
+}
+
+.about-text {
+    color: #00ccff;
+    line-height: 1.8;
+    margin-top: 15px;
+    text-align: justify;
+}
+
+/* IMAGE GALLERY */
+.image-gallery {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.gallery-img {
+    max-width: 100%;
+    width: 300px;
+    border: 5px ridge #ff6600;
+    box-shadow: 0 0 20px rgba(255, 102, 0, 0.5);
+    margin: 10px;
+}
+
+.chief-keef-gallery .gallery-img {
+    border-color: #ff0000;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+.keef-quote {
+    color: #ff6600;
+    font-style: italic;
+    font-size: 20px;
+    text-align: center;
+    margin: 15px 0;
+    text-shadow: 2px 2px 0 #330000;
+}
+
+/* GITHUB SECTION */
+.github-box {
+    background: linear-gradient(180deg, #0d1117 0%, #161b22 100%);
+    border-color: #58a6ff;
+}
+
+.github-stats {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    color: #58a6ff;
+    text-decoration: none;
+    font-size: 24px;
+    padding: 15px 25px;
+    background: #21262d;
+    border-radius: 10px;
+    border: 2px solid #58a6ff;
+    transition: all 0.3s;
+}
+
+.github-link:hover {
+    background: #30363d;
+    box-shadow: 0 0 20px rgba(88, 166, 255, 0.5);
+}
+
+.github-logo {
+    width: 50px;
+    height: 50px;
+    filter: invert(1);
+}
+
+.github-info {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.github-info p {
+    color: #8b949e;
+    margin: 5px 0;
+}
+
+.cool-button-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.cool-button {
+    display: inline-block;
+    background: linear-gradient(180deg, #ff6600 0%, #cc3300 50%, #ff6600 100%);
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 30px;
+    border: 3px ridge #ffcc00;
+    border-radius: 10px;
+    text-shadow: 2px 2px 0 #000;
+    animation: button-pulse 1s infinite alternate;
+}
+
+.cool-button:hover {
+    background: linear-gradient(180deg, #ff9900 0%, #ff6600 50%, #ff9900 100%);
+    transform: scale(1.05);
+}
+
+@keyframes button-pulse {
+    from { box-shadow: 0 0 10px #ff6600; }
+    to { box-shadow: 0 0 30px #ff6600, 0 0 50px #ff3300; }
+}
+
+/* PROJECTS LIST */
+.projects-list {
+    list-style: none;
+    padding: 0;
+}
+
+.projects-list li {
+    color: #00ff00;
+    padding: 10px;
+    margin: 5px 0;
+    background: linear-gradient(90deg, transparent 0%, #003300 50%, transparent 100%);
+    border-left: 3px solid #ff6600;
+    font-size: 16px;
+}
+
+.fire-text {
+    color: #ff6600;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* FOOTER */
+.footer-cell {
+    background: linear-gradient(180deg, #000033 0%, #000066 50%, #000033 100%);
+    border-top: 3px ridge #00ff00;
+    padding: 20px;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-marquee {
+    color: #ffff00;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.copyright {
+    color: #00ff00;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 0 0 10px #00ff00;
+    margin: 10px 0;
+}
+
+.footer-link {
+    margin: 15px 0;
+}
+
+.footer-link a {
+    color: #ff00ff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: 2px solid #ff00ff;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.footer-link a:hover {
+    background: #ff00ff;
+    color: #000;
+    box-shadow: 0 0 20px #ff00ff;
+}
+
+.footer-text {
+    color: #00ccff;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.footer-badges {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.badge {
+    background: linear-gradient(180deg, #333 0%, #111 100%);
+    color: #00ff00;
+    padding: 5px 15px;
+    border: 2px ridge #00ff00;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+/* SMALL TEXT */
+.small-text {
+    font-size: 11px;
+    color: #00ccff;
+    text-align: center;
+    margin: 5px 0;
+}
+
+/* RESPONSIVE (but keeping 2009 vibe) */
+@media (max-width: 900px) {
+    .sidebar {
+        display: none;
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+
+    .glow {
+        font-size: 32px;
+    }
+
+    .section-title {
+        font-size: 22px;
+    }
+}
+
+/* CURSOR TRAIL EFFECT (2009 nostalgia) */
+body {
+    cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><circle cx="10" cy="10" r="8" fill="%2300ff00" opacity="0.8"/></svg>'), auto;
+}
+
+/* SELECTION COLOR */
+::selection {
+    background: #00ff00;
+    color: #000;
+}
+
+::-moz-selection {
+    background: #00ff00;
+    color: #000;
+}
