@@ -8,20 +8,16 @@
 </head>
 <body>
     <div class="page-wrapper">
-        <!-- BOUNCING DVD STYLE GIF -->
-        <div class="bouncing-gif" id="dvd-bounce">
-            <img src="images/keef5.gif" alt="Chief Keef Bounce">
-        </div>
 
         <!-- HEADER BAR -->
         <div class="top-bar">
             <div class="top-bar-inner">
-                <span class="site-title">BELDANGI FAX MACHINE</span>
+                <span class="site-title">BELDANGI FAX MACHINE LLC</span>
                 <nav class="top-nav">
                     <a href="#about">About</a>
-                    <a href="#beldangi">Beldangi</a>
-                    <a href="#chiefkeef">Chief Keef</a>
                     <a href="#github">GitHub</a>
+                    <a href="terms.html">Terms</a>
+                    <a href="privacy.html">Privacy</a>
                 </nav>
             </div>
         </div>
@@ -37,7 +33,7 @@
         <!-- MAIN CONTENT -->
         <div class="main-container">
 
-            <!-- ABOUT SECTION -->
+            <!-- BUSINESS CARD -->
             <div id="about" class="section">
                 <div class="section-header">
                     <h2>About</h2>
@@ -52,15 +48,10 @@
                         </div>
                         <div class="about-text">
                             <h3>Beldangi Fax Machine LLC</h3>
-                            <p class="subtitle">Software Development Company</p>
                             <table class="info-table">
                                 <tr>
                                     <td>Company:</td>
                                     <td>Beldangi Fax Machine LLC</td>
-                                </tr>
-                                <tr>
-                                    <td>Roots:</td>
-                                    <td>Beldangi Refugee Camp, Jhapa District, Nepal</td>
                                 </tr>
                                 <tr>
                                     <td>Focus:</td>
@@ -72,58 +63,12 @@
                                 </tr>
                             </table>
                             <p class="bio">
-                                Beldangi Fax Machine LLC is a software development company building
-                                AI/ML and full stack products. Founded with roots in the Beldangi
-                                Refugee Camp in Nepal, the company ships software, develops products,
-                                and contributes to open source.
+                                Beldangi Fax Machine LLC is a software development company
+                                building AI/ML and full stack products. The company ships
+                                software, develops products, and contributes to open source.
                             </p>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <!-- BELDANGI SECTION -->
-            <div id="beldangi" class="section">
-                <div class="section-header">
-                    <h2>Beldangi Refugee Camp</h2>
-                </div>
-                <div class="section-content">
-                    <div class="image-showcase">
-                        <div class="showcase-main">
-                            <img src="images/beldangi1.jpg" alt="Lotshampa refugees in Beldangi Camp" class="main-image">
-                            <p class="image-caption">Lotshampa refugees in Beldangi Camp, Jhapa District, Nepal</p>
-                        </div>
-                        <div class="showcase-grid">
-                            <img src="images/jigme_x.jpg" alt="Jigme Singye Wangchuck" class="grid-image jigme-img">
-                        </div>
-                    </div>
-                    <p class="section-text">
-                        Beldangi was one of seven refugee camps in Nepal that housed over 100,000 Bhutanese refugees.
-                        Located in Jhapa District, eastern Nepal. Home for many years before resettlement programs
-                        brought families to new countries. The journey from here shaped everything.
-                    </p>
-                </div>
-            </div>
-
-            <!-- CHIEF KEEF SECTION -->
-            <div id="chiefkeef" class="section">
-                <div class="section-header">
-                    <h2>Chief Keef</h2>
-                </div>
-                <div class="section-content">
-                    <div class="keef-gallery">
-                        <div class="keef-main">
-                            <img src="images/keef1.gif" alt="Chief Keef" class="keef-gif-main">
-                        </div>
-                        <div class="keef-grid">
-                            <img src="images/keef2.gif" alt="Chief Keef 2" class="keef-gif">
-                            <img src="images/keef3.gif" alt="Chief Keef 3" class="keef-gif">
-                            <img src="images/keef4.gif" alt="Chief Keef 4" class="keef-gif">
-                        </div>
-                    </div>
-                    <p class="section-text center">
-                        Keith Farrelle Cozart. Chicago. GBE. Glory Boyz. Drill. Finally Rich. Almighty So. 300.
-                    </p>
                 </div>
             </div>
 
@@ -165,45 +110,13 @@
             <div class="footer-content">
                 <p class="copyright">Copyright 2026 Beldangi Fax Machine LLC. All rights reserved.</p>
                 <p class="footer-link">
-                    <a href="https://github.com/Beldangi-fax-Machine/eatinnweb" target="_blank">eatinnweb repository</a>
+                    <a href="terms.html">Terms of Service</a>
+                    &nbsp;&middot;&nbsp;
+                    <a href="privacy.html">Privacy Policy</a>
                 </p>
             </div>
         </div>
 
     </div>
-
-    <!-- DVD BOUNCE SCRIPT -->
-    <script>
-        (function() {
-            const dvd = document.getElementById('dvd-bounce');
-            let x = 50, y = 100;
-            let vx = 2, vy = 1.5;
-            const speed = 1;
-
-            function animate() {
-                const maxX = window.innerWidth - dvd.offsetWidth;
-                const maxY = window.innerHeight - dvd.offsetHeight;
-
-                x += vx * speed;
-                y += vy * speed;
-
-                if (x <= 0 || x >= maxX) {
-                    vx = -vx;
-                    x = Math.max(0, Math.min(x, maxX));
-                }
-                if (y <= 0 || y >= maxY) {
-                    vy = -vy;
-                    y = Math.max(0, Math.min(y, maxY));
-                }
-
-                dvd.style.left = x + 'px';
-                dvd.style.top = y + 'px';
-
-                requestAnimationFrame(animate);
-            }
-
-            animate();
-        })();
-    </script>
 </body>
 </html>
