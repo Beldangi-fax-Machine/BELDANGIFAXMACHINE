@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EatInnMonitor — Admin Control Center</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body data-theme="dark">
+
+<!-- ============ LOGIN GATE ============ -->
+<section id="login-screen" class="login-screen">
+    <div class="login-card">
+        <div class="brand">
+            <div class="brand-mark">EI</div>
+            <div>
+                <h1>EatInnMonitor</h1>
+                <p class="brand-sub">Admin Control Center</p>
+            </div>
+        </div>
+        <p class="login-lead">Secure backend access. Authorized operators only.</p>
+
+        <form id="login-form" autocomplete="off">
+            <label>Admin Email
+                <input type="email" id="login-email" placeholder="admin@eatinn.io" required>
+            </label>
+            <label>Password
+                <input type="password" id="login-password" placeholder="••••••••••••" required>
+            </label>
+            <label>2FA Token
+                <input type="text" id="login-2fa" inputmode="numeric" maxlength="6" placeholder="6-digit code" required>
+            </label>
+            <button type="submit" class="btn btn-primary btn-block">Authenticate</button>
+            <p id="login-error" class="login-error" hidden></p>
+        </form>
+
+        <div class="login-meta">
+            <span class="dot ok"></span> TLS 1.3 · Session-scoped · Audit-logged
+        </div>
+        <p class="login-demo">Demo login: <code>admin@eatinn.io</code> / <code>monitor</code> / <code>123456</code></p>
+    </div>
+</section>
+
+<!-- ============ APP SHELL ============ -->
+<div id="app" class="app" hidden>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-mark sm">EI</div>
+            <span>EatInnMonitor</span>
+        </div>
+        <nav class="nav">
+            <button class="nav-item active" data-view="overview"><span class="ic">◫</span> Overview</button>
+            <button class="nav-item" data-view="errors"><span class="ic">⚠</span> Sentry Errors <span class="badge" id="nav-error-count">0</span></button>
+            <button class="nav-item" data-view="assistant"><span class="ic">✦</span> Claude Assistant</button>
+            <button class="nav-item" data-view="bans"><span class="ic">⛔</span> Ban Control <span class="badge danger" id="nav-risk-count">0</span></button>
+            <button class="nav-item" data-view="map"><span class="ic">◉</span> Live Map</button>
+            <button class="nav-item" data-view="notifications"><span class="ic">🔔</span> Notifications <span class="badge" id="nav-notif-count">0</span></button>
+        </nav>
+        <div class="sidebar-foot">
+            <div class="op-card">
+                <div class="op-avatar" id="op-avatar">A</div>
+                <div>
+                    <div class="op-name" id="op-name">admin</div>
+                    <div class="op-role">Super Admin</div>
+                </div>
+            </div>
+            <button class="btn btn-ghost btn-sm btn-block" id="logout-btn">Sign out</button>
+        </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+        <header class="topbar">
+            <div>
+                <h2 id="view-title">Overview</h2>
+                <p id="view-sub" class="muted">Real-time system health across the EatInn platform</p>
+            </div>
+            <div class="topbar-actions">
+                <div class="env-pill"><span class="dot ok"></span> production</div>
+                <button class="btn btn-ghost btn-sm" id="refresh-btn">↻ Refresh</button>
+            </div>
+        </header>
+
+        <div class="view-wrap">
+            <!-- OVERVIEW -->
+            <section class="view" id="view-overview">
+                <div class="stat-grid">
+                    <div class="stat-card">
+                        <span class="stat-label">Open Errors (24h)</span>
+                        <span class="stat-value" id="kpi-errors">—</span>
+                        <span class="stat-delta up" id="kpi-errors-delta"></span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Affected Users</span>
+                        <span class="stat-value" id="kpi-users">—</span>
+                        <span class="stat-delta" id="kpi-users-sub">across all services</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">High-Risk Accounts</span>
+                        <span class="stat-value danger" id="kpi-risk">—</span>
+                        <span class="stat-delta" id="kpi-risk-sub">flagged live</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Active Sessions</span>
+                        <span class="stat-value" id="kpi-sessions">—</span>
+                        <span class="stat-delta" id="kpi-sessions-sub">on the map now</span>
+                    </div>
+                </div>
+
+                <div class="panel-row">
+                    <div class="panel grow">
+                        <div class="panel-head"><h3>Error volume (last 12h)</h3></div>
+                        <div class="panel-body"><canvas id="spark-chart" height="160"></canvas></div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-head"><h3>Service health</h3></div>
+                        <div class="panel-body" id="service-health"></div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-head"><h3>Top issues right now</h3><a class="link" data-jump="errors">View all →</a></div>
+                    <div class="panel-body" id="overview-issues"></div>
+                </div>
+            </section>
+
+            <!-- ERRORS -->
+            <section class="view" id="view-errors" hidden>
+                <div class="errors-layout">
+                    <div class="panel issue-list-panel">
+                        <div class="panel-head">
+                            <h3>Sentry Issues</h3>
+                            <select id="error-filter" class="select">
+                                <option value="all">All severities</option>
+                                <option value="fatal">Fatal</option>
+                                <option value="error">Error</option>
+                                <option value="warning">Warning</option>
+                            </select>
+                        </div>
+                        <div class="panel-body issue-list" id="issue-list"></div>
+                    </div>
+                    <div class="panel issue-detail-panel">
+                        <div class="panel-body" id="issue-detail">
+                            <div class="empty-state">Select an issue to inspect</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ASSISTANT -->
+            <section class="view" id="view-assistant" hidden>
+                <div class="assistant-layout">
+                    <div class="panel">
+                        <div class="panel-head">
+                            <h3>✦ Claude Assistant <span class="model-pill">claude-opus-4-8 · MCP</span></h3>
+                        </div>
+                        <div class="panel-body chat-body" id="chat-body">
+                            <div class="chat-msg assistant">
+                                <div class="chat-avatar">✦</div>
+                                <div class="chat-bubble">
+                                    I have MCP access to your Sentry issues, the ban ledger, and live user movement.
+                                    Ask me to explain an error in plain language, summarize what users are reporting,
+                                    propose a fix, or assess a flagged account. Try a prompt below.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-input-row">
+                            <div class="chip-row" id="prompt-chips">
+                                <button class="chip" data-prompt="Explain the top fatal error in plain language and propose a fix.">Explain top error</button>
+                                <button class="chip" data-prompt="Summarize what users are reporting in bug reports this week.">Summarize bug reports</button>
+                                <button class="chip" data-prompt="Which flagged account is the highest risk and why? Recommend an action.">Assess top risk</button>
+                            </div>
+                            <form id="chat-form">
+                                <input type="text" id="chat-input" placeholder="Ask Claude about errors, users, or risk…" autocomplete="off">
+                                <button class="btn btn-primary" type="submit">Send</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="panel context-panel">
+                        <div class="panel-head"><h3>MCP context</h3></div>
+                        <div class="panel-body" id="mcp-context"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BANS -->
+            <section class="view" id="view-bans" hidden>
+                <div class="bans-layout">
+                    <div class="panel">
+                        <div class="panel-head">
+                            <h3>Bad actor watchlist <span class="live-pill"><span class="dot pulse"></span> live</span></h3>
+                        </div>
+                        <div class="panel-body actor-list" id="actor-list"></div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body" id="actor-detail">
+                            <div class="empty-state">Select an account to run a risk analysis</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MAP -->
+            <section class="view" id="view-map" hidden>
+                <div class="panel map-panel">
+                    <div class="panel-head">
+                        <h3>Live user movement</h3>
+                        <div class="map-legend">
+                            <span><span class="dot ok"></span> normal</span>
+                            <span><span class="dot warn"></span> watched</span>
+                            <span><span class="dot bad"></span> flagged</span>
+                        </div>
+                    </div>
+                    <div class="panel-body map-body">
+                        <canvas id="map-canvas"></canvas>
+                        <div class="map-side" id="map-side"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- NOTIFICATIONS -->
+            <section class="view" id="view-notifications" hidden>
+                <div class="panel">
+                    <div class="panel-head">
+                        <h3>Notifications</h3>
+                        <button class="btn btn-ghost btn-sm" id="mark-read">Mark all read</button>
+                    </div>
+                    <div class="panel-body notif-list" id="notif-list"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+
+<!-- toast host -->
+<div class="toast-host" id="toast-host"></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

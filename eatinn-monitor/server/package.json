@@ -1,0 +1,17 @@
+{
+  "name": "eatinn-monitor-server",
+  "version": "1.0.0",
+  "description": "Backend for EatInnMonitor — admin auth, Sentry error access, and a Claude assistant with MCP access to issues, bug reports and the ban ledger.",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.69.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}
