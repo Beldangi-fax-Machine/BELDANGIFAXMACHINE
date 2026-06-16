@@ -159,6 +159,39 @@ body {
     box-shadow: 0 3px 10px rgba(0,0,0,0.4);
 }
 
+/* COMPANY LOGO BADGE (replaces personal photo) */
+.logo-badge {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    background: linear-gradient(180deg, #4a3030 0%, #2d1d1d 100%);
+    border: 3px solid #5a3838;
+    border-radius: 6px;
+    box-shadow:
+        0 3px 10px rgba(0,0,0,0.4),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+.logo-mark {
+    font-size: 48px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #f0e0e0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.logo-sub {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    color: #a08080;
+    text-transform: uppercase;
+}
+
 .about-text h3 {
     font-size: 24px;
     color: #f0e0e0;
@@ -462,6 +495,11 @@ body {
 
     .profile-img {
         max-width: 200px;
+    }
+
+    .logo-badge {
+        max-width: 200px;
+        margin: 0 auto;
     }
 
     /* Chief Keef thumbnails: 3 across is too tight on phones */
