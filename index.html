@@ -17,6 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
 </head>
 <body>
 
@@ -27,11 +28,12 @@
             <span>Toad Stool Labs</span>
         </a>
         <nav class="nav-links">
-            <a href="#game">The Game</a>
+            <a href="#game">Game</a>
             <a href="#gallery">Gallery</a>
             <a href="#beta">Gameplay</a>
-            <a href="#support">Get in the game</a>
+            <a href="#support">Support</a>
             <a class="nav-cta" href="https://linktr.ee/BeldangiFaxMachine" target="_blank" rel="noopener">Get updates</a>
+            <button class="theme-toggle" type="button" aria-label="Toggle light and dark mode">◐</button>
         </nav>
     </header>
 
@@ -60,8 +62,9 @@
         <section id="game" class="section">
             <div class="section-grid">
                 <div class="section-copy">
-                    <h2>Been coding since I was 8.</h2>
-                    <p>I'm a solo developer building a game about mushrooms, mycology, and the strange little lab where it all happens. You swab spores, culture them on agar, grow them out, and keep the lab running.</p>
+                    <span class="eyebrow">The game</span>
+                    <h2>A strange little lab, full of mushrooms.</h2>
+                    <p>Toad Stool Labs is a mycology game made by one developer. You play a frog scientist running a lab where better mushrooms mean better days.</p>
                     <p>A free demo is on its way to <strong>Steam</strong>. Want to know the second it drops? That's what the updates list is for.</p>
                     <div class="hero-buttons">
                         <a class="btn btn-primary" href="https://linktr.ee/BeldangiFaxMachine" target="_blank" rel="noopener">Join the updates list</a>
@@ -72,13 +75,18 @@
                     <p class="caption">Better mushrooms = better days.</p>
                 </div>
             </div>
+            <div class="steps">
+                <div class="step"><div class="step-icon">🧫</div><h3>Swab spores</h3><p>Collect spores from the supply dispenser and the world around you.</p></div>
+                <div class="step"><div class="step-icon">🔪</div><h3>Cut &amp; culture</h3><p>Cut agar and culture your samples to see what grows.</p></div>
+                <div class="step"><div class="step-icon">🍄</div><h3>Grow &amp; run the lab</h3><p>Grow them out, keep the lab running, and make tomorrow better.</p></div>
+            </div>
         </section>
 
         <!-- GALLERY / ASSETS -->
         <section id="gallery" class="section">
             <div class="section-head">
                 <h2>From the lab</h2>
-                <p>Characters, environments, and a peek behind the screen.</p>
+                <p>Characters, worlds, and a peek behind the screen.</p>
             </div>
             <div class="gallery">
                 <figure class="gallery-item wide">
@@ -86,17 +94,11 @@
                     <figcaption>In the lab</figcaption>
                 </figure>
                 <figure class="gallery-item">
-                    <video autoplay muted loop playsinline poster="gallery/trippy-poster.jpg">
-                        <source src="gallery/trippy.mp4" type="video/mp4">
-                    </video>
-                    <figcaption>The mushroom world</figcaption>
-                </figure>
-                <figure class="gallery-item">
                     <img src="gallery/avatar.png" alt="Close-up of the frog scientist." loading="lazy">
                     <figcaption>The scientist</figcaption>
                 </figure>
                 <figure class="gallery-item">
-                    <img src="gallery/character.png" alt="The playable frog character model." loading="lazy" style="object-fit:contain;background:#0e0b08;">
+                    <img src="gallery/character.png" alt="The playable frog character model." loading="lazy" class="contain">
                     <figcaption>The player</figcaption>
                 </figure>
                 <figure class="gallery-item">
@@ -139,34 +141,36 @@
         <section class="section follow">
             <h2>Follow along</h2>
             <div class="social-row">
-                <a class="social" href="https://www.instagram.com/_toadstoollabs" target="_blank" rel="noopener">
-                    <span class="social-name">Instagram</span>
-                    <span class="social-handle">@_toadstoollabs</span>
-                </a>
-                <a class="social" href="https://www.tiktok.com/@beldangifaxmachinelc" target="_blank" rel="noopener">
-                    <span class="social-name">TikTok</span>
-                    <span class="social-handle">@beldangifaxmachinelc</span>
-                </a>
-                <a class="social" href="https://github.com/Beldangi-fax-Machine" target="_blank" rel="noopener">
-                    <span class="social-name">GitHub</span>
-                    <span class="social-handle">Beldangi-fax-Machine</span>
-                </a>
-                <a class="social" href="https://linktr.ee/BeldangiFaxMachine" target="_blank" rel="noopener">
-                    <span class="social-name">All my links</span>
-                    <span class="social-handle">Linktree</span>
-                </a>
+                <a class="social" href="https://www.instagram.com/_toadstoollabs" target="_blank" rel="noopener">Instagram<small>@_toadstoollabs</small></a>
+                <a class="social" href="https://www.tiktok.com/@beldangifaxmachinelc" target="_blank" rel="noopener">TikTok<small>@beldangifaxmachinelc</small></a>
+                <a class="social" href="https://linktr.ee/BeldangiFaxMachine" target="_blank" rel="noopener">All links<small>Linktree</small></a>
             </div>
         </section>
 
     </main>
 
-    <footer class="footer">
-        <p>© 2026 Toad Stool Labs</p>
-        <p class="footer-links">
-            <a href="terms.html">Terms</a>
-            <a href="privacy.html">Privacy</a>
-        </p>
-    </footer>
+    <!-- COMPANY INFO (bottom) -->
+    <section class="company" id="company">
+        <div class="company-inner">
+            <div>
+                <h2>Beldangi Fax Machine LLC</h2>
+                <p>Toad Stool Labs is developed by Beldangi Fax Machine LLC, a software development company building AI/ML and full stack products, shipping software, and contributing to open source.</p>
+            </div>
+            <dl>
+                <dt>Company</dt><dd>Beldangi Fax Machine LLC</dd>
+                <dt>Focus</dt><dd>AI / ML &amp; full stack development</dd>
+                <dt>Code</dt><dd><a href="https://github.com/Beldangi-fax-Machine" target="_blank" rel="noopener">github.com/Beldangi-fax-Machine</a></dd>
+            </dl>
+        </div>
+        <footer class="footer">
+            <p>© 2026 Beldangi Fax Machine LLC. All rights reserved.</p>
+            <p class="footer-links">
+                <a href="terms.html">Terms</a>
+                <a href="privacy.html">Privacy</a>
+            </p>
+        </footer>
+    </section>
 
+    <script src="theme.js"></script>
 </body>
 </html>
