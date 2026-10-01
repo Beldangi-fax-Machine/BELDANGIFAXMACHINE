@@ -3,120 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beldangi Fax Machine LLC</title>
+    <title>Toad Stool Labs</title>
+    <meta name="description" content="Toad Stool Labs — a mycology game in the making. Grow mushrooms, run the lab, play the free demo coming soon to Steam.">
+
+    <meta property="og:title" content="Toad Stool Labs">
+    <meta property="og:description" content="A mycology game in the making. Better mushrooms = better days. Demo dropping soon.">
+    <meta property="og:image" content="gallery/shot2.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/png" href="gallery/avatar.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="page-wrapper">
 
-        <!-- HEADER BAR -->
-        <div class="top-bar">
-            <div class="top-bar-inner">
-                <span class="site-title">BELDANGI FAX MACHINE LLC</span>
-                <nav class="top-nav">
-                    <a href="#about">About</a>
-                    <a href="#github">GitHub</a>
-                    <a href="terms.html">Terms</a>
-                    <a href="privacy.html">Privacy</a>
-                </nav>
-            </div>
-        </div>
+    <!-- NAV -->
+    <header class="nav">
+        <a class="nav-brand" href="#top">
+            <img src="gallery/avatar.png" alt="" class="nav-logo">
+            <span>Toad Stool Labs</span>
+        </a>
+        <nav class="nav-links">
+            <a href="#game">The Game</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#beta">Gameplay</a>
+            <a href="#support">Get in the game</a>
+            <a class="nav-cta" href="https://linktr.ee/BeldangiFaxMachine" target="_blank" rel="noopener">Get updates</a>
+        </nav>
+    </header>
 
-        <!-- HERO SECTION -->
-        <div class="hero">
-            <div class="hero-content">
-                <h1>BELDANGI FAX MACHINE LLC</h1>
-                <p class="tagline">Software Development Company</p>
-            </div>
-        </div>
+    <main id="top">
 
-        <!-- MAIN CONTENT -->
-        <div class="main-container">
-
-            <!-- BUSINESS CARD -->
-            <div id="about" class="section">
-                <div class="section-header">
-                    <h2>About</h2>
+        <!-- HERO: character over the mushroom world -->
+        <section class="hero">
+            <video class="hero-video" autoplay muted loop playsinline poster="gallery/trippy-poster.jpg">
+                <source src="gallery/trippy.mp4" type="video/mp4">
+            </video>
+            <div class="hero-scrim"></div>
+            <div class="hero-inner">
+                <img class="hero-character" src="gallery/character.png" alt="The Toad Stool Labs frog character.">
+                <span class="badge"><span class="dot"></span> Demo dropping soon</span>
+                <h1>Toad Stool Labs</h1>
+                <p class="tagline">A mycology game where you run the lab, grow the mushrooms, and find out that better mushrooms&nbsp;=&nbsp;better days.</p>
+                <div class="hero-buttons">
+                    <a class="btn btn-primary" href="https://linktr.ee/BeldangiFaxMachine" target="_blank" rel="noopener">Sign up for the drop →</a>
+                    <a class="btn btn-ghost" href="#beta">Watch gameplay</a>
                 </div>
-                <div class="section-content">
-                    <div class="about-grid">
-                        <div class="about-photo">
-                            <div class="logo-badge">
-                                <span class="logo-mark">BFM</span>
-                                <span class="logo-sub">LLC</span>
-                            </div>
-                        </div>
-                        <div class="about-text">
-                            <h3>Beldangi Fax Machine LLC</h3>
-                            <table class="info-table">
-                                <tr>
-                                    <td>Company:</td>
-                                    <td>Beldangi Fax Machine LLC</td>
-                                </tr>
-                                <tr>
-                                    <td>Focus:</td>
-                                    <td>AI / ML &amp; Full Stack Development</td>
-                                </tr>
-                                <tr>
-                                    <td>Work:</td>
-                                    <td>Software, products, and open source</td>
-                                </tr>
-                            </table>
-                            <p class="bio">
-                                Beldangi Fax Machine LLC is a software development company
-                                building AI/ML and full stack products. The company ships
-                                software, develops products, and contributes to open source.
-                            </p>
-                        </div>
+            </div>
+            <a href="#game" class="scroll-cue" aria-label="Scroll down">▾</a>
+        </section>
+
+        <!-- GAME / ABOUT -->
+        <section id="game" class="section">
+            <div class="section-grid">
+                <div class="section-copy">
+                    <h2>Been coding since I was 8.</h2>
+                    <p>I'm a solo developer building a game about mushrooms, mycology, and the strange little lab where it all happens. You swab spores, culture them on agar, grow them out, and keep the lab running.</p>
+                    <p>A free demo is on its way to <strong>Steam</strong>. Want to know the second it drops? That's what the updates list is for.</p>
+                    <div class="hero-buttons">
+                        <a class="btn btn-primary" href="https://linktr.ee/BeldangiFaxMachine" target="_blank" rel="noopener">Join the updates list</a>
                     </div>
                 </div>
-            </div>
-
-            <!-- GITHUB SECTION -->
-            <div id="github" class="section github-section">
-                <div class="section-header">
-                    <h2>GitHub</h2>
-                </div>
-                <div class="section-content">
-                    <div class="github-card">
-                        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" class="github-logo">
-                        <div class="github-info">
-                            <h3>Beldangi Fax Machine LLC</h3>
-                            <p>Software development company on GitHub. Open source contributions
-                               across AI/ML and full stack projects in multiple languages.</p>
-                            <a href="https://github.com/Beldangi-fax-Machine" target="_blank" class="github-button">View Organization</a>
-                        </div>
-                    </div>
-                    <div class="skills-section">
-                        <h4>Technologies</h4>
-                        <div class="skills-list">
-                            <span>JavaScript</span>
-                            <span>Python</span>
-                            <span>TypeScript</span>
-                            <span>React</span>
-                            <span>Node.js</span>
-                            <span>SQL</span>
-                            <span>Git</span>
-                            <span>HTML/CSS</span>
-                        </div>
-                    </div>
+                <div class="section-portrait">
+                    <img src="gallery/avatar.png" alt="Toad Stool Labs — the frog scientist." loading="lazy">
+                    <p class="caption">Better mushrooms = better days.</p>
                 </div>
             </div>
+        </section>
 
-        </div>
-
-        <!-- FOOTER -->
-        <div class="footer">
-            <div class="footer-content">
-                <p class="copyright">Copyright 2026 Beldangi Fax Machine LLC. All rights reserved.</p>
-                <p class="footer-link">
-                    <a href="terms.html">Terms of Service</a>
-                    &nbsp;&middot;&nbsp;
-                    <a href="privacy.html">Privacy Policy</a>
-                </p>
+        <!-- GALLERY / ASSETS -->
+        <section id="gallery" class="section">
+            <div class="section-head">
+                <h2>From the lab</h2>
+                <p>Characters, environments, and a peek behind the screen.</p>
             </div>
-        </div>
+            <div class="gallery">
+                <figure class="gallery-item wide">
+                    <img src="gallery/shot2.png" alt="The frog scientist examining a mushroom in the lab." loading="lazy">
+                    <figcaption>In the lab</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <video autoplay muted loop playsinline poster="gallery/trippy-poster.jpg">
+                        <source src="gallery/trippy.mp4" type="video/mp4">
+                    </video>
+                    <figcaption>The mushroom world</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="gallery/avatar.png" alt="Close-up of the frog scientist." loading="lazy">
+                    <figcaption>The scientist</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="gallery/character.png" alt="The playable frog character model." loading="lazy" style="object-fit:contain;background:#0e0b08;">
+                    <figcaption>The player</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="gallery/shot1.jpg" alt="The game being built inside the Godot editor." loading="lazy">
+                    <figcaption>Behind the screen</figcaption>
+                </figure>
+            </div>
+        </section>
 
-    </div>
+        <!-- BETA GAMEPLAY -->
+        <section id="beta" class="section">
+            <div class="section-head">
+                <h2>First beta playthrough</h2>
+                <p>Real footage — the supply dispenser, swabbing spores, and cutting agar.</p>
+            </div>
+            <div class="video-frame">
+                <video controls preload="none" poster="gallery/beta-poster.jpg">
+                    <source src="gallery/beta-gameplay.mp4" type="video/mp4">
+                    Your browser can't play this video.
+                </video>
+            </div>
+        </section>
+
+        <!-- SUPPORT / GET IN THE GAME -->
+        <section id="support" class="section support">
+            <div class="support-card">
+                <h2>Get your name in the game</h2>
+                <p>This game is made by one person. Buy me a coffee and you don't just help it get finished — <strong>you get put inside it.</strong></p>
+                <ul class="perk-list">
+                    <li>🌳 Your name <strong>carved into a tree</strong></li>
+                    <li>🪨 Your name <strong>etched on a rock</strong></li>
+                    <li>🍄 Or your name/username <strong>scattered in an area</strong> you can walk up to and see, highlighted in the world</li>
+                </ul>
+                <p class="perk-note">Buy me a coffee (any amount), send me the name or username you want, and I'll place it in the game.</p>
+                <a class="btn btn-primary" href="https://buymeacoffee.com/beldangifaxmachine" target="_blank" rel="noopener">☕ Buy me a coffee &amp; get in the game</a>
+            </div>
+        </section>
+
+        <!-- FOLLOW -->
+        <section class="section follow">
+            <h2>Follow along</h2>
+            <div class="social-row">
+                <a class="social" href="https://www.instagram.com/_toadstoollabs" target="_blank" rel="noopener">
+                    <span class="social-name">Instagram</span>
+                    <span class="social-handle">@_toadstoollabs</span>
+                </a>
+                <a class="social" href="https://www.tiktok.com/@beldangifaxmachinelc" target="_blank" rel="noopener">
+                    <span class="social-name">TikTok</span>
+                    <span class="social-handle">@beldangifaxmachinelc</span>
+                </a>
+                <a class="social" href="https://github.com/Beldangi-fax-Machine" target="_blank" rel="noopener">
+                    <span class="social-name">GitHub</span>
+                    <span class="social-handle">Beldangi-fax-Machine</span>
+                </a>
+                <a class="social" href="https://linktr.ee/BeldangiFaxMachine" target="_blank" rel="noopener">
+                    <span class="social-name">All my links</span>
+                    <span class="social-handle">Linktree</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 Toad Stool Labs</p>
+        <p class="footer-links">
+            <a href="terms.html">Terms</a>
+            <a href="privacy.html">Privacy</a>
+        </p>
+    </footer>
+
 </body>
 </html>
