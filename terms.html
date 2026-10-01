@@ -3,36 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service - Beldangi Fax Machine LLC</title>
+    <title>Terms of Service - Toad Stool Labs</title>
+    <link rel="icon" type="image/png" href="gallery/avatar.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
 </head>
 <body>
-    <div class="page-wrapper">
-
-        <!-- HEADER BAR -->
-        <div class="top-bar">
-            <div class="top-bar-inner">
-                <span class="site-title"><a href="index.html">BELDANGI FAX MACHINE LLC</a></span>
-                <nav class="top-nav">
-                    <a href="index.html">Home</a>
-                    <a href="terms.html">Terms</a>
-                    <a href="privacy.html">Privacy</a>
-                </nav>
-            </div>
-        </div>
-
-        <!-- HERO SECTION -->
-        <div class="hero">
-            <div class="hero-content">
-                <h1>Terms of Service</h1>
-                <p class="tagline">Last updated: June 16, 2026</p>
-            </div>
-        </div>
-
-        <!-- MAIN CONTENT -->
-        <div class="main-container">
-            <div class="section">
-                <div class="section-content legal-content">
+    <header class="legal-nav">
+        <a class="nav-brand" href="index.html">
+            <img src="gallery/avatar.png" alt="" class="nav-logo">
+            <span>Toad Stool Labs</span>
+        </a>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="terms.html">Terms</a>
+            <a href="privacy.html">Privacy</a>
+            <button class="theme-toggle" type="button" aria-label="Toggle light and dark mode">◐</button>
+        </nav>
+    </header>
+    <main class="legal">
+        <h1>Terms of Service</h1>
+        <p class="updated">Last updated: June 16, 2026</p>
                     <h3>1. Acceptance of Terms</h3>
                     <p>
                         By accessing or using the website and services provided by Beldangi Fax
@@ -81,22 +75,11 @@
                         For questions about these Terms, contact us through our
                         <a href="https://github.com/Beldangi-fax-Machine" target="_blank">GitHub organization</a>.
                     </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- FOOTER -->
-        <div class="footer">
-            <div class="footer-content">
-                <p class="copyright">Copyright 2026 Beldangi Fax Machine LLC. All rights reserved.</p>
-                <p class="footer-link">
-                    <a href="terms.html">Terms of Service</a>
-                    &nbsp;&middot;&nbsp;
-                    <a href="privacy.html">Privacy Policy</a>
-                </p>
-            </div>
-        </div>
-
-    </div>
+    </main>
+    <footer class="footer">
+        <p>© 2026 Beldangi Fax Machine LLC. All rights reserved.</p>
+        <p class="footer-links"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></p>
+    </footer>
+    <script src="theme.js"></script>
 </body>
 </html>
