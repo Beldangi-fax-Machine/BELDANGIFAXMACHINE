@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Toad Stool Labs</title>
-    <meta name="description" content="Toad Stool Labs — a mycology game in the making. Grow mushrooms, run the lab, play the free demo coming soon to Steam.">
+    <meta name="description" content="Toad Stool Labs — a mushroom growing game. Free demo coming to Steam.">
 
     <meta property="og:title" content="Toad Stool Labs">
-    <meta property="og:description" content="A mycology game in the making. Better mushrooms = better days. Demo dropping soon.">
-    <meta property="og:image" content="gallery/shot2.png">
+    <meta property="og:description" content="A mushroom growing game. Free demo coming to Steam.">
+    <meta property="og:image" content="gallery/character.png">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
 
     <link rel="icon" type="image/png" href="gallery/avatar.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -27,90 +27,45 @@
             <span>Toad Stool Labs</span>
         </a>
         <nav class="nav-links">
-            <a href="#game">The Game</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#beta">Gameplay</a>
-            <a href="#support">Get in the game</a>
-            <a class="nav-cta" href="https://linktr.ee/BeldangiFaxMachine" target="_blank" rel="noopener">Get updates</a>
+            <a href="#game">About</a>
+            <a href="#gameplay">Gameplay</a>
+            <a href="#support">Support</a>
+            <a class="nav-cta" href="https://linktr.ee/BeldangiFaxMachine" target="_blank" rel="noopener">Updates</a>
         </nav>
     </header>
 
     <main id="top">
 
-        <!-- HERO: character over the mushroom world -->
+        <!-- HERO -->
         <section class="hero">
             <video class="hero-video" autoplay muted loop playsinline poster="gallery/trippy-poster.jpg">
                 <source src="gallery/trippy.mp4" type="video/mp4">
             </video>
             <div class="hero-scrim"></div>
             <div class="hero-inner">
-                <img class="hero-character" src="gallery/character.png" alt="The Toad Stool Labs frog character.">
-                <span class="badge"><span class="dot"></span> Demo dropping soon</span>
+                <img class="hero-character" src="gallery/character.png" alt="Frog character">
                 <h1>Toad Stool Labs</h1>
-                <p class="tagline">A mycology game where you run the lab, grow the mushrooms, and find out that better mushrooms&nbsp;=&nbsp;better days.</p>
+                <p class="tagline">Grow mushrooms. Run the lab. Free demo coming to Steam.</p>
                 <div class="hero-buttons">
-                    <a class="btn btn-primary" href="https://linktr.ee/BeldangiFaxMachine" target="_blank" rel="noopener">Sign up for the drop →</a>
-                    <a class="btn btn-ghost" href="#beta">Watch gameplay</a>
+                    <a class="btn btn-primary" href="#gameplay">Watch gameplay</a>
                 </div>
             </div>
-            <a href="#game" class="scroll-cue" aria-label="Scroll down">▾</a>
         </section>
 
-        <!-- GAME / ABOUT -->
+        <!-- ABOUT -->
         <section id="game" class="section">
-            <div class="section-grid">
-                <div class="section-copy">
-                    <h2>Been coding since I was 8.</h2>
-                    <p>I'm a solo developer building a game about mushrooms, mycology, and the strange little lab where it all happens. You swab spores, culture them on agar, grow them out, and keep the lab running.</p>
-                    <p>A free demo is on its way to <strong>Steam</strong>. Want to know the second it drops? That's what the updates list is for.</p>
-                    <div class="hero-buttons">
-                        <a class="btn btn-primary" href="https://linktr.ee/BeldangiFaxMachine" target="_blank" rel="noopener">Join the updates list</a>
-                    </div>
-                </div>
-                <div class="section-portrait">
-                    <img src="gallery/avatar.png" alt="Toad Stool Labs — the frog scientist." loading="lazy">
-                    <p class="caption">Better mushrooms = better days.</p>
-                </div>
+            <div class="about-block">
+                <h2>What is this</h2>
+                <p>It's a game about running a mycology lab. You swab spores, culture them on agar, grow them out. I'm one person making it in Godot.</p>
+                <p>Free demo hitting Steam soon.</p>
+                <a class="btn btn-primary" href="https://linktr.ee/BeldangiFaxMachine" target="_blank" rel="noopener">Get notified when it drops</a>
             </div>
         </section>
 
-        <!-- GALLERY / ASSETS -->
-        <section id="gallery" class="section">
+        <!-- GAMEPLAY -->
+        <section id="gameplay" class="section">
             <div class="section-head">
-                <h2>From the lab</h2>
-                <p>Characters, environments, and a peek behind the screen.</p>
-            </div>
-            <div class="gallery">
-                <figure class="gallery-item wide">
-                    <img src="gallery/shot2.png" alt="The frog scientist examining a mushroom in the lab." loading="lazy">
-                    <figcaption>In the lab</figcaption>
-                </figure>
-                <figure class="gallery-item">
-                    <video autoplay muted loop playsinline poster="gallery/trippy-poster.jpg">
-                        <source src="gallery/trippy.mp4" type="video/mp4">
-                    </video>
-                    <figcaption>The mushroom world</figcaption>
-                </figure>
-                <figure class="gallery-item">
-                    <img src="gallery/avatar.png" alt="Close-up of the frog scientist." loading="lazy">
-                    <figcaption>The scientist</figcaption>
-                </figure>
-                <figure class="gallery-item">
-                    <img src="gallery/character.png" alt="The playable frog character model." loading="lazy" style="object-fit:contain;background:#0e0b08;">
-                    <figcaption>The player</figcaption>
-                </figure>
-                <figure class="gallery-item">
-                    <img src="gallery/shot1.jpg" alt="The game being built inside the Godot editor." loading="lazy">
-                    <figcaption>Behind the screen</figcaption>
-                </figure>
-            </div>
-        </section>
-
-        <!-- BETA GAMEPLAY -->
-        <section id="beta" class="section">
-            <div class="section-head">
-                <h2>First beta playthrough</h2>
-                <p>Real footage — the supply dispenser, swabbing spores, and cutting agar.</p>
+                <h2>Gameplay</h2>
             </div>
             <div class="video-frame">
                 <video controls preload="none" poster="gallery/beta-poster.jpg">
@@ -120,24 +75,28 @@
             </div>
         </section>
 
-        <!-- SUPPORT / GET IN THE GAME -->
+        <!-- PLAYER MODEL -->
+        <section class="section">
+            <div class="section-head">
+                <h2>The player</h2>
+            </div>
+            <div class="model-showcase">
+                <img src="gallery/character.png" alt="Frog character model" loading="lazy">
+            </div>
+        </section>
+
+        <!-- SUPPORT -->
         <section id="support" class="section support">
             <div class="support-card">
                 <h2>Get your name in the game</h2>
-                <p>This game is made by one person. Buy me a coffee and you don't just help it get finished — <strong>you get put inside it.</strong></p>
-                <ul class="perk-list">
-                    <li>🌳 Your name <strong>carved into a tree</strong></li>
-                    <li>🪨 Your name <strong>etched on a rock</strong></li>
-                    <li>🍄 Or your name/username <strong>scattered in an area</strong> you can walk up to and see, highlighted in the world</li>
-                </ul>
-                <p class="perk-note">Buy me a coffee (any amount), send me the name or username you want, and I'll place it in the game.</p>
-                <a class="btn btn-primary" href="https://buymeacoffee.com/beldangifaxmachine" target="_blank" rel="noopener">☕ Buy me a coffee &amp; get in the game</a>
+                <p>Buy me a coffee, send me the name you want, and I'll put it in the game — carved on a tree, etched on a rock, or placed somewhere you can walk up to and find.</p>
+                <a class="btn btn-primary" href="https://buymeacoffee.com/beldangifaxmachine" target="_blank" rel="noopener">Buy me a coffee</a>
             </div>
         </section>
 
         <!-- FOLLOW -->
         <section class="section follow">
-            <h2>Follow along</h2>
+            <h2>Follow</h2>
             <div class="social-row">
                 <a class="social" href="https://www.instagram.com/_toadstoollabs" target="_blank" rel="noopener">
                     <span class="social-name">Instagram</span>
@@ -151,17 +110,13 @@
                     <span class="social-name">GitHub</span>
                     <span class="social-handle">Beldangi-fax-Machine</span>
                 </a>
-                <a class="social" href="https://linktr.ee/BeldangiFaxMachine" target="_blank" rel="noopener">
-                    <span class="social-name">All my links</span>
-                    <span class="social-handle">Linktree</span>
-                </a>
             </div>
         </section>
 
     </main>
 
     <footer class="footer">
-        <p>© 2026 Toad Stool Labs</p>
+        <p>&copy; 2026 Toad Stool Labs</p>
         <p class="footer-links">
             <a href="terms.html">Terms</a>
             <a href="privacy.html">Privacy</a>
