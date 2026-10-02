@@ -172,7 +172,7 @@ section, footer { position: relative; z-index: 1; }
 .section { max-width: var(--maxw); margin: 0 auto; padding: 72px 20px; }
 .section h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 14px; }
 
-.section-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; }
+.section-grid { display: grid; grid-template-columns: 1fr; max-width: 680px; margin: 0 auto; text-align: center; }
 .section-copy p { color: var(--muted); margin-bottom: 16px; font-size: 1.05rem; }
 .section-copy strong { color: var(--text); }
 .section-copy .hero-buttons { margin-top: 24px; justify-content: flex-start; }
@@ -187,7 +187,7 @@ section, footer { position: relative; z-index: 1; }
 .section-head p { color: var(--muted); }
 
 /* ===== GALLERY ===== */
-.gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .gallery-item {
     position: relative; overflow: hidden;
     border-radius: var(--radius); border: 1px solid var(--border);
