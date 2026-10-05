@@ -83,3 +83,12 @@ p { color: var(--muted); max-width: 60ch; margin-bottom: 16px; }
 .doc h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); margin: 8px 0 28px; }
 .doc h2 { font-size: 1.25rem; margin: 30px 0 8px; }
 .doc a { color: var(--accent); border-bottom: 1px solid var(--line); }
+
+/* gameplay videos */
+.videos { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; }
+.videos .wide { grid-column: 1 / -1; }
+@media (max-width: 640px) { .videos { grid-template-columns: 1fr; } }
+
+/* quiet LLC line */
+.fine { flex-basis: 100%; margin: 6px 0 0; font-size: 0.68rem; color: #6b6354; opacity: 0.8; }
+.footer nav + .fine { text-align: left; }
